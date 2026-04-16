@@ -1,5 +1,7 @@
 # 🌍 JaJu Republics - Country Information Website
-
+```bash
+This README.md is AI Generated!
+```
 ![GitHub](https://img.shields.io/badge/GitHub-Android--Studio--Developer-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Firebase](https://img.shields.io/badge/Hosted%20On-Firebase-orange)

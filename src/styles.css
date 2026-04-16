@@ -1,0 +1,726 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f5f7fb;
+  background: #07111f;
+  --primary-color: #0066ff;
+  --secondary-color: #ff4a31;
+  --panel-bg: rgba(9, 17, 30, 0.72);
+  --panel-border: rgba(160, 199, 255, 0.16);
+  --text-soft: rgba(232, 238, 248, 0.76);
+  --shadow-lg: 0 24px 80px rgba(3, 7, 18, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(0, 102, 255, 0.14), transparent 40%),
+    linear-gradient(180deg, #040b16 0%, #07111f 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: rgba(4, 10, 21, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand h1,
+.about-hero h2,
+.panel h3,
+.fact-card h4 {
+  margin: 0;
+}
+
+.brand__eyebrow,
+.section-kicker {
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #dce8ff;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-nav a:hover {
+  background: rgba(0, 102, 255, 0.14);
+}
+
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.about-hero {
+  position: relative;
+  min-height: 600px;
+  border-radius: 32px;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  box-shadow: var(--shadow-lg);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-hero__galaxy {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero__galaxy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 10, 19, 0.08) 0%, rgba(5, 10, 19, 0.52) 58%, rgba(5, 10, 19, 0.92) 100%);
+}
+
+.galaxy-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  padding: 3rem;
+}
+
+.page-main {
+  padding-top: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.home-section,
+.page-section {
+  margin-bottom: 2rem;
+}
+
+.page-heading,
+.section-title {
+  margin: 0 0 1.25rem;
+  color: #f4f8ff;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-content h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  color: white;
+}
+
+.lead,
+.tagline {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.lead {
+  font-size: 1.15rem;
+  margin: 0 0 1.25rem;
+}
+
+.tagline {
+  margin: 0;
+  font-style: italic;
+}
+
+.hero-flag {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.hero-flag svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.nav-cards-container,
+.quick-facts,
+.geography-card,
+.gov-intro,
+.gov-section,
+.feature-card,
+.fact-box,
+.nav-card {
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-cards-container,
+.quick-facts,
+.geography-card,
+.gov-intro,
+.gov-section {
+  background: rgba(244, 248, 255, 0.96);
+  color: #18304d;
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nav-cards-container--swap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 360px);
+  align-items: center;
+  gap: 2rem;
+  min-height: 420px;
+  background:
+    radial-gradient(circle at top left, rgba(0, 102, 255, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(9, 17, 30, 0.92), rgba(12, 24, 42, 0.96));
+  color: #f4f8ff;
+  border: 1px solid rgba(160, 199, 255, 0.12);
+}
+
+.nav-cards-copy {
+  max-width: 34rem;
+  color: rgba(232, 238, 248, 0.76);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.nav-swap-copy .section-title {
+  color: #f4f8ff;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  margin-bottom: 0.85rem;
+}
+
+.nav-swap-stage {
+  position: relative;
+  width: 340px;
+  max-width: 100%;
+  height: 260px;
+  justify-self: end;
+}
+
+.nav-cards-grid,
+.quick-facts-grid,
+.features,
+.climate-grid,
+.features-grid,
+.solutions-grid,
+.gov-grid,
+.participation-grid,
+.freedoms-grid,
+.education-grid,
+.vocational-programs,
+.defense-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.nav-cards-grid,
+.features,
+.gov-grid,
+.defense-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.quick-facts-grid,
+.climate-grid,
+.participation-grid,
+.freedoms-grid,
+.education-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.features-grid,
+.solutions-grid,
+.vocational-programs {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.nav-card,
+.feature-card,
+.fact-box,
+.climate-item,
+.feature-item,
+.solution-item,
+.gov-card,
+.participation-card,
+.freedom-card,
+.education-level,
+.program-card,
+.defense-card {
+  background: white;
+  border-radius: 18px;
+  padding: 1.25rem;
+  color: #18304d;
+}
+
+.nav-card {
+  text-decoration: none;
+  border: 1px solid rgba(0, 102, 255, 0.12);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-swap-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #f4f8ff;
+  background:
+    linear-gradient(180deg, rgba(10, 20, 36, 0.96), rgba(12, 28, 50, 0.96));
+  border: 1px solid rgba(160, 199, 255, 0.18);
+  box-shadow: 0 20px 48px rgba(3, 7, 18, 0.38);
+  padding: 1.35rem;
+}
+
+.nav-card:hover,
+.feature-card:hover,
+.feature-item:hover,
+.solution-item:hover,
+.gov-card:hover,
+.participation-card:hover,
+.freedom-card:hover {
+  transform: translateY(-4px);
+}
+
+.nav-swap-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.nav-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.nav-swap-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(0, 102, 255, 0.16);
+  color: #9bc3ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-swap-link {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  color: #9bc3ff;
+  font-weight: 700;
+}
+
+.nav-swap-card h4 {
+  margin: 0 0 0.7rem;
+  color: #f4f8ff;
+  font-size: 1.45rem;
+}
+
+.nav-swap-card p {
+  margin: 0;
+  color: rgba(232, 238, 248, 0.76);
+  line-height: 1.6;
+}
+
+.fact-box h4,
+.nav-card h4,
+.feature-card h3,
+.geography-card h3,
+.gov-section h3,
+.gov-intro h3,
+.feature-item h4,
+.solution-item h5,
+.education-level h5,
+.program-card h5,
+.defense-card h4 {
+  margin: 0 0 0.6rem;
+  color: var(--primary-color);
+}
+
+.geography-card h3,
+.gov-section h3,
+.page-heading {
+  font-size: 1.9rem;
+}
+
+.map-container {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.climate-details,
+.freedoms-warning,
+.war-stance {
+  margin-top: 1rem;
+  border-radius: 18px;
+  padding: 1.25rem;
+}
+
+.climate-details {
+  background: #eef5ff;
+}
+
+.environmental-issue {
+  background: linear-gradient(135deg, #fff6f6, #f5fbff);
+}
+
+.issue-section {
+  margin-top: 1.5rem;
+}
+
+.issue-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.issue-section li {
+  background: white;
+  padding: 1rem;
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+}
+
+.gov-card ul,
+.program-card ul,
+.defense-card ul {
+  padding-left: 1.1rem;
+}
+
+.freedoms-warning {
+  background: linear-gradient(135deg, #fff3cd, #fffaed);
+}
+
+.war-stance {
+  background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+}
+
+footer {
+  background: rgba(4, 10, 21, 0.9);
+  color: white;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.footer-section h4 {
+  margin: 0 0 0.6rem;
+  color: #9bc3ff;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.35rem;
+}
+
+.footer-section a {
+  color: #9bc3ff;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
+
+.government-section .gov-intro p,
+.government-section .gov-section p,
+.government-section li,
+.geography-card p,
+.geography-card li,
+.nav-card p,
+.feature-card p,
+.fact-box p {
+  color: #38506d;
+}
+
+.about-hero h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+.about-hero__lead,
+.description,
+.panel p,
+.value-card p {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.about-hero__lead {
+  font-size: 1.08rem;
+  margin: 1.25rem 0;
+}
+
+.about-hero__tagline {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+}
+
+.panel--featured {
+  padding: 2rem;
+}
+
+.panel--soft {
+  background: linear-gradient(180deg, rgba(11, 23, 40, 0.82), rgba(12, 28, 50, 0.72));
+}
+
+.panel--stacked {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.panel__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.country-tagline {
+  margin: 0.45rem 0 0;
+  color: #ffb6aa;
+  font-size: 1.05rem;
+}
+
+.flag-card {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+  background: white;
+}
+
+.flag-card svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.fact-card,
+.value-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fact-card {
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.fact-card p {
+  margin: 0 0 0.5rem;
+  color: rgba(220, 232, 255, 0.62);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fact-card h4 {
+  font-size: 1rem;
+  color: #fefefe;
+  line-height: 1.4;
+}
+
+.value-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.value-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .site-header__inner,
+  .panel__header,
+  .about-layout,
+  .nav-cards-container--swap {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header__inner {
+    display: grid;
+  }
+
+  .facts-grid,
+  .hero-content,
+  .nav-cards-grid,
+  .features,
+  .gov-grid,
+  .defense-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page {
+    padding: 1rem 1rem 3rem;
+  }
+
+  .about-hero {
+    min-height: 520px;
+    border-radius: 24px;
+  }
+
+  .about-hero__content,
+  .panel,
+  .panel--featured {
+    padding: 1.25rem;
+  }
+
+  .site-nav {
+    gap: 0.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .nav-cards-container,
+  .quick-facts,
+  .geography-card,
+  .gov-intro,
+  .gov-section {
+    padding: 1.25rem;
+  }
+
+  .nav-cards-container--swap {
+    min-height: auto;
+  }
+
+  .nav-swap-stage {
+    position: relative;
+    width: 340px;
+    max-width: 100%;
+    height: 260px;
+    justify-self: center;
+    margin: 0.5rem auto 0;
+  }
+}

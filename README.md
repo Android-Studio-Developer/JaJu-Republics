@@ -9,7 +9,7 @@ This README.md is AI Generated!
 
 > **A dynamic, responsive information website showcasing JaJu Republics - a fictional democratic nation in Asia with vibrant culture, rich heritage, and democratic values.**
 
-🌐 **Live Site:** https://jaju-republics.web.app
+🌐 **Live Site:** https://jaju-republic.web.app
 
 ---
 

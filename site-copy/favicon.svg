@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#0066ff"/>
+  
+  <!-- White section -->
+  <path d="M 100 20 L 100 180 L 20 100 Z" fill="#ffffff"/>
+  
+  <!-- Blue section -->
+  <path d="M 100 20 L 100 180 L 180 100 Z" fill="#0066ff"/>
+  
+  <!-- Red circle in center -->
+  <circle cx="100" cy="100" r="35" fill="#ff4a31"/>
+  
+  <!-- White highlight on red circle for depth -->
+  <circle cx="100" cy="90" r="8" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Mountain/peak silhouette at bottom -->
+  <path d="M 60 140 L 100 110 L 140 140" fill="#ff4a31" opacity="0.7"/>
+</svg>

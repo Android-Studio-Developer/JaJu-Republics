@@ -53,7 +53,7 @@ export default function App() {
       <div className="access-screen" style={{ '--app-font': fontFamily }}>
         <form className="access-panel" onSubmit={handleAccessSubmit}>
           <p className="access-kicker">JaJu Republics</p>
-          <h1>Enter the grass code</h1>
+          <h1>Enter The Code</h1>
           <div className="access-field">
             <input
               type="text"

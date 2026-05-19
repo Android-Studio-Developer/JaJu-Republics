@@ -8,17 +8,11 @@ const facts = [
 ];
 
 const values = [
-  {
-    title: 'Diversity With Flavor',
-    text: 'JaJu Republics presents itself as a place where different traditions, foods, and stories all belong together.',
-  },
-  {
-    title: 'Fresh Coastal Energy',
-    text: 'The About Us story leans into the feel of sea breeze, moving water, and a calm island rhythm.',
-  },
+  
+  
   {
     title: 'Up And Downs',
-    text: 'The national identity is not polished into perfection. It feels human, uneven, and memorable on purpose.',
+    text: 'The national identity is not in the tourism industry, but in the everyday lives of its people .',
   },
 ];
 
@@ -47,10 +41,10 @@ export default function AboutSection() {
           <p className="section-kicker">About Us</p>
           <h2>A Nation Full of Up &amp; Downs</h2>
           <p className="about-hero__lead">
-            JaJu Republics gives you a taste of diversity and abundance. The page is now rebuilt in JSX so we can keep growing it with React-based experiences and animated visual layers.
+            JaJu Republics gives you a taste of diversity and abundance of <b>GRASS</b>
           </p>
           <p className="about-hero__tagline">
-            National Motto: <em>&quot;Unity, Progress, Prosperity&quot;</em>
+            National Motto: <em>&quot;Touch Grass lil bro&quot;</em>
           </p>
         </div>
       </div>
@@ -61,7 +55,7 @@ export default function AboutSection() {
             <div>
               <p className="section-kicker">National Identity</p>
               <h3>JaJu Republics</h3>
-              <p className="country-tagline">A Nation full of Up &amp; Downs</p>
+              <p className="country-tagline">A Nation full of Up &amp; GRASS</p>
             </div>
             <div className="flag-card" aria-label="JaJu Republics flag">
               <FlagArtwork />
@@ -78,19 +72,11 @@ export default function AboutSection() {
           </div>
 
           <p className="description">
-            JaJu Republics gives you a great taste of diversity and abundance. For the suite and scent of the fresh, JaJu Republics&apos; wave of the waters will stress you down.
+            JaJu Republics gives you a great taste of oysters and tangerines, but <b>Touch grass</b>
           </p>
         </article>
 
         <aside id="values" className="panel panel--stacked">
-          <div className="panel panel--soft">
-            <p className="section-kicker">Creative Direction</p>
-            <h3>Why move this into React?</h3>
-            <p>
-              React gives this project room to grow beyond a single static page. We can break sections into components, plug in React Bits-style visuals, and keep the content easier to maintain.
-            </p>
-          </div>
-
           <div className="value-list">
             {values.map((value) => (
               <article className="panel value-card" key={value.title}>

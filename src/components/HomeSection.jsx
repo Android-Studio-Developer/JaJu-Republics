@@ -1,51 +1,68 @@
 import FlagArtwork from './icons/FlagArtwork';
 import CardSwap, { Card } from './CardSwap';
 
-const quickFacts = [
+export const quickFacts = [
   { label: 'Location', value: 'Asia' },
   { label: 'Government Type', value: 'Presidential Republic' },
   { label: 'Legislature', value: 'KukHwae (국회)' },
   { label: 'System', value: 'Democratic' },
 ];
 
-const homeCards = [
+export const homeCards = [
   {
     id: 'about',
     icon: 'ℹ️',
     title: 'About Us',
-    text: "Learn about our nation's identity, heritage, and values.",
+    text: 'Learn about our country and people.',
   },
   {
     id: 'geography',
     icon: '🗺️',
     title: 'Geography',
-    text: 'Discover our landscapes, climate, and natural wonders.',
+    text: 'See our lands and nature.',
   },
   {
     id: 'government',
     icon: '🏛️',
     title: 'Government',
-    text: 'Understand our democratic system and public institutions.',
+    text: 'How our leaders and government work.',
+  },
+  {
+    id: 'economy',
+    icon: '💰',
+    title: 'Economy',
+    text: 'Explore our currency, trade, and economic freedom.',
+  },
+  {
+    id: 'business',
+    icon: '🏪',
+    title: 'Business',
+    text: 'See a simple business plan with easy questions and answers.',
   },
 ];
 
-const whyVisit = [
+export const whyVisit = [
   {
     title: 'Location',
-    text: 'Located in the heart of Asia, JaJu Republics is a vibrant nation with diverse landscapes.',
+    text: "We're in Asia. We have mountains, beaches, and small towns.",
   },
   {
     title: 'Culture',
-    text: 'The republic blends civic ideals, island identity, and memorable local traditions into one experience.',
+    text: 'We have many traditions and tasty food.',
   },
   {
     title: 'Explore',
-    text: 'Learn about our geography, heritage, and the taste of JaJu Republics.',
+    text: 'Read about our land and people.',
   },
 ];
 
-export default function HomeSection() {
+export default function HomeSection({ onNavigate }) {
   const handleCardJump = (id) => {
+    if (onNavigate) {
+      onNavigate(id);
+      return;
+    }
+
     const section = document.getElementById(id);
     if (!section) {
       return;
@@ -57,28 +74,24 @@ export default function HomeSection() {
 
   return (
     <section id="home" className="home-section container">
-      <div className="hero">
+      <section className="hero">
         <div className="hero-content">
           <div>
             <h2>Welcome to JaJu Republics</h2>
-            <p className="lead">Discover a unique country in Asia with a rich culture, vibrant spirit, and democratic values.</p>
-            <p className="tagline">
-              National Motto: <em>&quot;Unity, Progress, Prosperity&quot;</em>
-            </p>
+            <p className="lead">Discover a unique country in Asia</p>
+            <p className="tagline">National Motto: <em>"<b>Touch Grass lil bro</b>"</em></p>
           </div>
           <div className="hero-flag">
             <FlagArtwork />
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="nav-cards-container nav-cards-container--swap">
+      <section className="nav-cards-container nav-cards-container--swap">
         <div className="nav-swap-copy">
           <p className="section-kicker">Section Navigator</p>
           <h3 className="section-title">Explore JaJu Republics</h3>
-          <p className="nav-cards-copy">
-            Use the stacked cards to move through the story of JaJu Republics. Each card leads directly to its section.
-          </p>
+          <p className="nav-cards-copy">Use the stacked cards to move through the story of JaJu Republics. Each card leads directly to its section.</p>
         </div>
         <div className="nav-swap-stage">
           <CardSwap width={340} height={230} cardDistance={26} verticalDistance={30} delay={4500} pauseOnHover>
@@ -102,15 +115,18 @@ export default function HomeSection() {
                 </div>
                 <h4>{card.title}</h4>
                 <p>{card.text}</p>
-                <span className="nav-swap-link">Open section</span>
+                <span className="nav-swap-link">Open</span>
               </Card>
             ))}
           </CardSwap>
         </div>
-      </div>
+      </section>
 
-      <div className="quick-facts">
-        <h3 className="section-title">Quick Facts</h3>
+      <section className="quick-facts">
+        <div className="panel-header-row">
+          <h3 className="section-title">Quick Facts</h3>
+          <span className="panel-action">•</span>
+        </div>
         <div className="quick-facts-grid">
           {quickFacts.map((fact) => (
             <div className="fact-box" key={fact.label}>
@@ -119,16 +135,15 @@ export default function HomeSection() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="features">
-        {whyVisit.map((item) => (
-          <article className="feature-card" key={item.title}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </article>
-        ))}
-      </div>
+      <section className="why-visit-panel">
+        <div className="panel-header-row">
+          <h3 className="section-title">Why Visit JaJu?</h3>
+          <button type="button" className="panel-action-button">+</button>
+        </div>
+        <p className="why-visit-copy">A short summary of why people should visit JaJu Republics will go here.</p>
+      </section>
     </section>
   );
 }

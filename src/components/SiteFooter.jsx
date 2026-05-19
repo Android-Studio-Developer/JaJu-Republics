@@ -13,6 +13,7 @@ export default function SiteFooter() {
             <li><a href="#about">About Us</a></li>
             <li><a href="#geography">Geography</a></li>
             <li><a href="#government">Government</a></li>
+            <li><a href="#business">Business</a></li>
           </ul>
         </div>
         <div className="footer-section">
@@ -35,7 +36,7 @@ export default function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <p>&copy; 2026 JaJu Republics. All rights reserved.</p>
-        <p>National Motto: &quot;Unity, Progress, Prosperity&quot;</p>
+        <p>National Motto: &quot;Touch Grass lil bro&quot;</p>
       </div>
     </footer>
   );
